@@ -1,4 +1,7 @@
 describe('Automated ESPN Script', function() {
+    afterEach(function() {
+        cy.window().then(win => win.onbeforeunload = undefined);
+    });
     it('Changes waiver time to next hour!', function() {
         cy.visit('https://fantasy.espn.com/basketball/team?leagueId=292959&teamId=1&seasonId=2020');
 
