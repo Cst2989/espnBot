@@ -57,6 +57,9 @@ describe('Automated ESPN Script', function() {
             } else if (val1 === '2 PM') {
                 cy.get('.waiver-process-days').find('select').select('15');
             } else if (val1 === '3 PM') {
+                cy.get('.waiver-process-days').find('select').select('16');
+                
+            } else if (val1 === '4 PM') {
                 cy.get('.waiver-process-days').find('select').select('4');
             }
         })
