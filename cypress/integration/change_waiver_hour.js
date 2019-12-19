@@ -30,8 +30,15 @@ describe('Automated ESPN Script', function() {
         cy.wait(3000);
 
         cy.visit('https://fantasy.espn.com/basketball/league/settings?leagueId=292959&view=transactions');
-
+        
         cy.wait(3000);
+
+        cy.get("body").then($body => {
+            if ($body.find("button[data-view=transactions]").length > 0) {   //evaluates as true
+                cy.get("button[data-view=transactions]")
+                .click();
+            }
+        });
 
         cy.get('.waiver-process-days').find('select').find(':selected').invoke('text').then((val1) => {
             if (val1 === '4 AM') {
