@@ -40,7 +40,7 @@ describe('Automated ESPN Script', function() {
             }
         });
 
-        cy.get('.waiver-process-days').find('select').find(':selected').invoke('text').then((val1) => {
+        cy.get('.dropdown waiver-process-days').find('select').find(':selected').invoke('text').then((val1) => {
             if (val1 === '4 AM') {
                 cy.get('.waiver-process-days').find('select').select('5');
             } else if (val1 === '5 AM') {
